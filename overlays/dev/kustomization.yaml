@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 503237308475.dkr.ecr.sa-east-1.amazonaws.com/eks-front
   newName: 503237308475.dkr.ecr.sa-east-1.amazonaws.com/eks-front
-  newTag: b3651ee4
+  newTag: 98bebed0
 resources:
 - ../../base
 patchesStrategicMerge:
