@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-front
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fr-fargate
+  template:
+    metadata:
+      labels:
+        app: fr-fargate
+    spec:
+      containers:
+        - name: eks-front
+          image: 503237308475.dkr.ecr.sa-east-1.amazonaws.com/eks-front:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

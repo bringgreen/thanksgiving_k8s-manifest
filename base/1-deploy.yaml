@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 1-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: 1-deploy
+  template:
+    metadata:
+      labels:
+        app: 1-deploy
+    spec:
+      containers:
+        - name: 1-deploy
+          image: 503237308475.dkr.ecr.sa-east-1.amazonaws.com/1-deploy:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

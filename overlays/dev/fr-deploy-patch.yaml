@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-front
+  namespace: default
+  labels:
+    env: dev
+spec:
+  selector:
+    matchLabels:
+      app: fr-fargate
+  template:
+    metadata:
+      labels:
+        app: fr-fargate

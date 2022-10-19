@@ -1,0 +1,12 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: eks-cluster
+  region: sa-east-1
+fargateProfiles:
+  - name: fr-fargate
+    selectors:
+      - namespace: default
+        labels:
+          app: fr-fargate

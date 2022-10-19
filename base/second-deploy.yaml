@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: second-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: second-deploy
+  template:
+    metadata:
+      labels:
+        app: second-deploy
+    spec:
+      containers:
+        - name: second-deploy
+          image: public.ecr.aws/y7c9e1d2/joozero-repo:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
